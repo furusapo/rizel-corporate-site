@@ -658,7 +658,34 @@
         min-width:100%;
       }
     }
-  </style>
+  
+    /* RIZEL_IMAGE_IMPLEMENTATION */
+    .message-photo{
+      background-image:url("assets/message.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .business-image{
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .business-environment{
+      background-image:url("assets/business-environment.jpg");
+    }
+
+    .business-agriculture{
+      background-image:url("assets/business-agriculture.jpg");
+    }
+
+    .business-waste{
+      background-image:url("assets/business-waste.jpg");
+    }
+
+</style>
 </head>
 
 <body>
@@ -713,10 +740,7 @@
 
     <div class="message-grid">
 
-      <div class="image-placeholder">
-        ここに企業・環境イメージ画像<br>
-        assets/message.jpg
-      </div>
+      <div class="image-placeholder message-photo"></div>
 
       <div>
         <div class="section-en">MESSAGE</div>
@@ -783,10 +807,7 @@
     <div class="business-grid">
 
       <article class="business-card">
-        <div class="business-image">
-          環境事業イメージ<br>
-          assets/business-environment.jpg
-        </div>
+        <div class="business-image business-environment"></div>
 
         <div class="business-body">
           <div class="business-no">1</div>
@@ -801,10 +822,7 @@
 
 
       <article class="business-card">
-        <div class="business-image">
-          農業イメージ<br>
-          assets/business-agriculture.jpg
-        </div>
+        <div class="business-image business-agriculture"></div>
 
         <div class="business-body">
           <div class="business-no">2</div>
@@ -820,10 +838,7 @@
 
 
       <article class="business-card">
-        <div class="business-image">
-          産業廃棄物処理イメージ<br>
-          assets/business-waste.jpg
-        </div>
+        <div class="business-image business-waste"></div>
 
         <div class="business-body">
           <div class="business-no">3</div>
