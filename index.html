@@ -1139,6 +1139,158 @@
 
 </style>
 
+
+<style id="rizel-company-brochure">
+
+.company-section{
+  padding:120px 0;
+  background:#fff;
+}
+
+.company-wrap{
+  width:min(1220px, calc(100% - 64px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:56% 44%;
+  align-items:stretch;
+  min-height:650px;
+  background:#fff;
+}
+
+.company-info{
+  padding:54px 62px 54px 0;
+}
+
+.company-heading{
+  margin-bottom:22px;
+}
+
+.company-en{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#b58a3c;
+  font-size:15px;
+  letter-spacing:.12em;
+  margin-bottom:2px;
+}
+
+.company-heading h2{
+  margin:0;
+  font-family:
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    serif;
+  font-size:28px;
+  font-weight:400;
+  letter-spacing:.08em;
+}
+
+.company-profile{
+  margin:0;
+  border-top:1px solid #d9d5cf;
+}
+
+.profile-row{
+  display:grid;
+  grid-template-columns:155px 1fr;
+  min-height:60px;
+  border-bottom:1px solid #d9d5cf;
+}
+
+.profile-row dt,
+.profile-row dd{
+  margin:0;
+  display:flex;
+  align-items:center;
+  padding:14px 18px;
+  font-size:15px;
+  line-height:1.8;
+}
+
+.profile-row dt{
+  font-weight:600;
+  background:#f7f4ee;
+  font-family:
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+.profile-row dd{
+  font-family:
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+.profile-business dd{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:2px;
+}
+
+.company-photo{
+  position:relative;
+  overflow:hidden;
+  min-height:650px;
+}
+
+.company-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+/* 細いゴールドラインでパンフ感 */
+.company-wrap{
+  border-top:1px solid rgba(181,138,60,.25);
+}
+
+@media(max-width:900px){
+
+  .company-section{
+    padding:80px 0;
+  }
+
+  .company-wrap{
+    grid-template-columns:1fr;
+    width:min(100% - 32px, 700px);
+  }
+
+  .company-info{
+    padding:0 0 40px;
+  }
+
+  .company-photo{
+    min-height:480px;
+  }
+}
+
+@media(max-width:520px){
+
+  .profile-row{
+    grid-template-columns:100px 1fr;
+  }
+
+  .profile-row dt,
+  .profile-row dd{
+    padding:12px 10px;
+    font-size:12px;
+  }
+
+  .company-photo{
+    min-height:400px;
+  }
+}
+
+</style>
+
 </head>
 
 <body>
@@ -1334,67 +1486,76 @@
 </section>
 
 
-<section id="company">
-  <div class="container">
 
-    <div class="company-grid">
+<section id="company" class="company-section">
+  <div class="company-wrap">
 
-      <div class="company-intro">
-        <div class="section-en">COMPANY</div>
+    <div class="company-info">
 
-        <h2>
-          信頼される企業として、<br>
-          一歩ずつ未来へ。
-        </h2>
+      <div class="company-heading">
+        <div class="company-en">COMPANY OVERVIEW</div>
+        <h2>会社概要</h2>
       </div>
 
-      <dl class="company-table">
+      <dl class="company-profile">
 
-        <div class="company-row">
+        <div class="profile-row">
           <dt>会社名</dt>
           <dd>株式会社 RIZEL</dd>
         </div>
 
-        <div class="company-row">
+        <div class="profile-row">
           <dt>代表取締役</dt>
           <dd>野瀬 隆彦</dd>
         </div>
 
-        <div class="company-row">
+        <div class="profile-row">
           <dt>所在地</dt>
           <dd>
             〒101-0041<br>
-            東京都千代田区神田須田町2丁目15<br>
-            GYBビル502
+            東京都千代田区神田須田町2丁目15 GYBビル502
           </dd>
         </div>
 
-        <div class="company-row">
+        <div class="profile-row">
           <dt>TEL</dt>
-          <dd>
-            <a href="tel:0368597295">03-6859-7295</a>
-          </dd>
+          <dd><a href="tel:0368597295">03-6859-7295</a></dd>
         </div>
 
-        <div class="company-row">
+        <div class="profile-row">
           <dt>FAX</dt>
           <dd>03-6859-7221</dd>
         </div>
 
-        <div class="company-row">
+        <div class="profile-row">
+          <dt>携帯</dt>
+          <dd><a href="tel:09053091485">090-5309-1485</a></dd>
+        </div>
+
+        <div class="profile-row">
+          <dt>Mail</dt>
+          <dd><a href="mailto:rizel2022@gmail.com">rizel2022@gmail.com</a></dd>
+        </div>
+
+        <div class="profile-row profile-business">
           <dt>事業内容</dt>
           <dd>
-            環境事業<br>
-            農業運営管理<br>
-            産業廃棄物処理場運営管理
+            <span>・環境事業</span>
+            <span>・農業運営管理</span>
+            <span>・産業廃棄物処理場運営管理</span>
           </dd>
         </div>
 
       </dl>
-
     </div>
+
+    <div class="company-photo">
+      <img src="assets/company-office.png" alt="株式会社RIZEL 会社イメージ">
+    </div>
+
   </div>
 </section>
+
 
 
 <section class="contact" id="contact">
