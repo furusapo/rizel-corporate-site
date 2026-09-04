@@ -688,6 +688,36 @@
 
 </style>
 
+
+<style id="rizel-hero-soft-motion">
+
+/* HERO：かなりゆっくり、わずかに下からふわっと */
+.hero-content {
+  animation: heroSoftFade 3.2s cubic-bezier(.22,.61,.36,1) both !important;
+}
+
+@keyframes heroSoftFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+</style>
+
 </head>
 
 <body>
