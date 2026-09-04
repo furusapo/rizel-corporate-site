@@ -685,6 +685,192 @@
       background-image:url("assets/business-waste.jpg");
     }
 
+
+/* RIZEL_HERO_2026 */
+
+.hero{
+  position:relative;
+  min-height:760px;
+  padding-top:84px;
+  overflow:hidden;
+  display:flex;
+  align-items:stretch;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.98) 0%,
+      rgba(255,255,255,.95) 24%,
+      rgba(255,255,255,.78) 42%,
+      rgba(255,255,255,.20) 62%,
+      rgba(255,255,255,0) 78%
+    ),
+    url("assets/message.jpg");
+  background-size:cover;
+  background-position:center right;
+}
+
+.hero::after{
+  display:none !important;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  min-height:676px;
+}
+
+.hero-content{
+  width:52%;
+  padding:50px 0 150px;
+}
+
+.hero .eyebrow{
+  font-family:Georgia,serif;
+  color:#ad8135;
+  letter-spacing:.22em;
+  font-size:14px;
+  margin-bottom:30px;
+}
+
+.hero h1{
+  margin:0 0 28px;
+  font-size:clamp(48px,5.2vw,76px);
+  font-weight:500;
+  line-height:1.48;
+  letter-spacing:.08em;
+  color:#282329;
+}
+
+.hero-copy{
+  max-width:560px;
+  font-size:17px;
+  line-height:2.15;
+  color:#353035;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:14px;
+  margin-top:38px;
+}
+
+.hero-gold-wave{
+  position:absolute;
+  z-index:3;
+  left:-5%;
+  right:-5%;
+  bottom:55px;
+  height:145px;
+  background:linear-gradient(90deg,#9b7436,#e0bd67,#b2873e);
+  border-radius:55% 55% 0 0 / 100% 100% 0 0;
+  transform:rotate(-3deg);
+  transform-origin:center;
+}
+
+.hero-dark-wave{
+  position:absolute;
+  z-index:4;
+  left:-5%;
+  right:-5%;
+  bottom:-95px;
+  height:230px;
+  background:linear-gradient(100deg,#2c2732,#47404d);
+  border-radius:55% 55% 0 0 / 100% 100% 0 0;
+  transform:rotate(2.5deg);
+  transform-origin:center;
+}
+
+.hero-bg-label{
+  display:none !important;
+}
+
+@media(max-width:850px){
+
+  .hero{
+    min-height:720px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,.97) 0%,
+        rgba(255,255,255,.88) 55%,
+        rgba(255,255,255,.35) 100%
+      ),
+      url("assets/message.jpg");
+    background-size:cover;
+    background-position:62% center;
+  }
+
+  .hero-inner{
+    min-height:636px;
+  }
+
+  .hero-content{
+    width:78%;
+    padding:60px 0 150px;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .hero-gold-wave{
+    bottom:48px;
+    height:105px;
+  }
+
+  .hero-dark-wave{
+    bottom:-70px;
+    height:170px;
+  }
+}
+
+@media(max-width:520px){
+
+  .hero{
+    min-height:660px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,.98) 0%,
+        rgba(255,255,255,.91) 68%,
+        rgba(255,255,255,.55) 100%
+      ),
+      url("assets/message.jpg");
+    background-size:cover;
+    background-position:68% center;
+  }
+
+  .hero-inner{
+    min-height:576px;
+  }
+
+  .hero-content{
+    width:100%;
+    padding:55px 0 145px;
+  }
+
+  .hero h1{
+    font-size:36px;
+    line-height:1.55;
+  }
+
+  .hero-copy{
+    font-size:14px;
+    max-width:90%;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero .btn{
+    width:190px;
+  }
+}
+
 </style>
 </head>
 
@@ -708,8 +894,9 @@
 
 <main>
 
+
 <section class="hero" id="top">
-  <div class="container">
+  <div class="container hero-inner">
     <div class="hero-content">
       <div class="eyebrow">RIZEL CORPORATION</div>
 
@@ -719,8 +906,7 @@
       </h1>
 
       <p class="hero-copy">
-        私たちRIZELは、信頼と技術をもって、
-        環境・農業・資源循環に関わる事業を通じ、
+        私たちRIZELは、信頼と技術をもって、<br>
         持続可能な社会の実現に貢献します。
       </p>
 
@@ -731,8 +917,10 @@
     </div>
   </div>
 
-  <div class="hero-bg-label">SUSTAINABLE FUTURE</div>
+  <div class="hero-gold-wave"></div>
+  <div class="hero-dark-wave"></div>
 </section>
+
 
 
 <section class="message" id="about">
