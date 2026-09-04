@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>株式会社RIZEL｜人と環境をつなぎ、未来を創る。</title>
+  <meta name="description" content="株式会社RIZELは、環境事業、農業運営管理、産業廃棄物処理場運営管理を通じて、人と環境をつなぎ、持続可能な社会の実現に貢献します。">
+
+  <meta property="og:title" content="株式会社RIZEL">
+  <meta property="og:description" content="人と環境をつなぎ、未来を創る。">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{
+      --dark:#2f2a34;
+      --dark2:#413946;
+      --gold:#b58a3c;
+      --gold-light:#d6b66d;
+      --green:#526e55;
+      --text:#28242a;
+      --muted:#706a70;
+      --bg:#f7f6f3;
+      --white:#ffffff;
+      --line:#e5e1da;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        "Noto Serif JP",
+        serif;
+      color:var(--text);
+      background:var(--white);
+      line-height:1.9;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1180px,calc(100% - 48px));
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+
+    .header-inner{
+      height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-family:Georgia,serif;
+      letter-spacing:.14em;
+      font-size:25px;
+    }
+
+    .logo-mark{
+      width:35px;
+      height:35px;
+      border-radius:50% 50% 50% 12px;
+      background:linear-gradient(145deg,var(--dark),#706775);
+      transform:rotate(-25deg);
+      position:relative;
+    }
+
+    .logo-mark:after{
+      content:"";
+      position:absolute;
+      width:11px;
+      height:11px;
+      background:linear-gradient(135deg,#f7da7b,#9d6c17);
+      border-radius:50%;
+      top:7px;
+      right:7px;
+    }
+
+    nav{
+      display:flex;
+      gap:34px;
+      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+      font-size:13px;
+      letter-spacing:.08em;
+    }
+
+    nav a{
+      transition:.25s;
+    }
+
+    nav a:hover{
+      color:var(--gold);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      padding-top:84px;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.90) 43%,rgba(255,255,255,.16) 72%),
+        linear-gradient(135deg,#edf2f0,#dce5df);
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      right:-10%;
+      bottom:-40%;
+      width:65%;
+      height:80%;
+      background:linear-gradient(135deg,var(--gold-light),var(--dark));
+      border-radius:50% 0 0 0;
+      opacity:.9;
+      transform:rotate(-5deg);
+    }
+
+    .hero-bg-label{
+      position:absolute;
+      right:6%;
+      top:25%;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:13px;
+      letter-spacing:.25em;
+      color:rgba(0,0,0,.25);
+      z-index:2;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:3;
+      padding:100px 0;
+      width:65%;
+    }
+
+    .eyebrow{
+      font-family:Georgia,serif;
+      color:var(--gold);
+      letter-spacing:.2em;
+      font-size:13px;
+      margin-bottom:24px;
+    }
+
+    h1{
+      font-weight:500;
+      font-size:clamp(42px,6vw,78px);
+      line-height:1.45;
+      letter-spacing:.08em;
+      margin-bottom:30px;
+    }
+
+    .hero-copy{
+      max-width:600px;
+      font-size:17px;
+      line-height:2.1;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:14px;
+      margin-top:42px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:190px;
+      height:58px;
+      padding:0 30px;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:13px;
+      letter-spacing:.08em;
+      transition:.3s;
+    }
+
+    .btn-primary{
+      color:white;
+      background:var(--dark);
+    }
+
+    .btn-primary:hover{
+      background:var(--gold);
+    }
+
+    .btn-outline{
+      border:1px solid var(--dark);
+      background:white;
+    }
+
+    .btn-outline:hover{
+      background:var(--dark);
+      color:white;
+    }
+
+    /* SECTION COMMON */
+
+    section{
+      padding:120px 0;
+    }
+
+    .section-head{
+      margin-bottom:58px;
+    }
+
+    .section-en{
+      font-family:Georgia,serif;
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.2em;
+      margin-bottom:8px;
+    }
+
+    .section-title{
+      font-size:34px;
+      font-weight:500;
+      letter-spacing:.08em;
+    }
+
+    /* MESSAGE */
+
+    .message{
+      background:var(--bg);
+    }
+
+    .message-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .image-placeholder{
+      min-height:480px;
+      background:
+        linear-gradient(135deg,rgba(47,42,52,.2),rgba(181,138,60,.25)),
+        linear-gradient(135deg,#d9e3dc,#f4f0e8);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#696369;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      letter-spacing:.05em;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .image-placeholder:before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(255,255,255,.35);
+      border-radius:50%;
+      right:-40px;
+      top:-40px;
+    }
+
+    .message h2{
+      font-size:38px;
+      font-weight:500;
+      line-height:1.65;
+      margin-bottom:25px;
+    }
+
+    .message p{
+      line-height:2.15;
+    }
+
+    /* VALUES */
+
+    .values{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .value{
+      padding:48px 35px;
+      text-align:center;
+      border-right:1px solid var(--line);
+    }
+
+    .value:last-child{
+      border-right:0;
+    }
+
+    .value-number{
+      color:var(--gold);
+      font-family:Georgia,serif;
+      font-size:14px;
+      margin-bottom:13px;
+    }
+
+    .value h3{
+      font-size:20px;
+      margin-bottom:12px;
+      font-weight:500;
+    }
+
+    .value p{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.9;
+    }
+
+    /* BUSINESS */
+
+    .business{
+      background:#fff;
+    }
+
+    .business-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .business-card{
+      border:1px solid var(--line);
+      background:white;
+      overflow:hidden;
+      transition:.35s;
+    }
+
+    .business-card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 18px 50px rgba(0,0,0,.08);
+    }
+
+    .business-image{
+      height:245px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:30px;
+      color:#767076;
+      background:linear-gradient(145deg,#e9eee9,#d9e0da);
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:13px;
+    }
+
+    .business-body{
+      padding:34px;
+    }
+
+    .business-no{
+      width:38px;
+      height:38px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      background:var(--dark);
+      font-family:Georgia,serif;
+      margin-bottom:20px;
+    }
+
+    .business-card h3{
+      font-size:22px;
+      font-weight:500;
+      margin-bottom:15px;
+      line-height:1.5;
+    }
+
+    .business-card p{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:14px;
+      color:var(--muted);
+      line-height:2;
+    }
+
+    /* VISION */
+
+    .vision{
+      background:var(--dark);
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .vision:after{
+      content:"RIZEL";
+      position:absolute;
+      right:-20px;
+      bottom:-90px;
+      font-family:Georgia,serif;
+      font-size:250px;
+      color:rgba(255,255,255,.025);
+      letter-spacing:.08em;
+    }
+
+    .vision-inner{
+      max-width:850px;
+      position:relative;
+      z-index:2;
+    }
+
+    .vision h2{
+      font-size:40px;
+      font-weight:500;
+      line-height:1.7;
+      margin-bottom:26px;
+    }
+
+    .vision p{
+      color:rgba(255,255,255,.74);
+      line-height:2.2;
+    }
+
+    /* COMPANY */
+
+    .company-grid{
+      display:grid;
+      grid-template-columns:1fr 1.3fr;
+      gap:80px;
+    }
+
+    .company-intro h2{
+      font-size:38px;
+      font-weight:500;
+      line-height:1.6;
+    }
+
+    .company-table{
+      border-top:1px solid var(--line);
+    }
+
+    .company-row{
+      display:grid;
+      grid-template-columns:145px 1fr;
+      gap:25px;
+      padding:20px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .company-row dt{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    .company-row dd{
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:14px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:linear-gradient(135deg,var(--dark),var(--dark2));
+      color:white;
+      text-align:center;
+    }
+
+    .contact .section-en{
+      color:var(--gold-light);
+    }
+
+    .contact h2{
+      font-size:38px;
+      font-weight:500;
+      margin-bottom:16px;
+    }
+
+    .contact-copy{
+      color:rgba(255,255,255,.7);
+      margin-bottom:40px;
+    }
+
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .contact-box{
+      min-width:300px;
+      border:1px solid rgba(255,255,255,.2);
+      padding:25px 35px;
+      transition:.3s;
+    }
+
+    .contact-box:hover{
+      background:white;
+      color:var(--dark);
+    }
+
+    .contact-small{
+      display:block;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:11px;
+      letter-spacing:.08em;
+      opacity:.65;
+      margin-bottom:5px;
+    }
+
+    .contact-main{
+      font-family:Georgia,serif;
+      font-size:22px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#231f26;
+      color:rgba(255,255,255,.55);
+      padding:35px 0;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:11px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:850px){
+
+      .container{
+        width:min(100% - 32px,1180px);
+      }
+
+      header{
+        position:absolute;
+      }
+
+      nav{
+        display:none;
+      }
+
+      .hero{
+        min-height:auto;
+        padding-top:84px;
+      }
+
+      .hero-content{
+        width:100%;
+        padding:90px 0 160px;
+      }
+
+      h1{
+        font-size:44px;
+      }
+
+      .hero:after{
+        width:90%;
+        height:35%;
+        right:-25%;
+        bottom:-12%;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      section{
+        padding:85px 0;
+      }
+
+      .message-grid,
+      .company-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+      }
+
+      .message-grid .image-placeholder{
+        order:2;
+      }
+
+      .values,
+      .business-grid{
+        grid-template-columns:1fr;
+      }
+
+      .value{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .value:last-child{
+        border-bottom:0;
+      }
+
+      .company-row{
+        grid-template-columns:110px 1fr;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+    }
+
+    @media(max-width:520px){
+      h1{
+        font-size:35px;
+      }
+
+      .message h2,
+      .vision h2,
+      .contact h2,
+      .company-intro h2{
+        font-size:29px;
+      }
+
+      .section-title{
+        font-size:28px;
+      }
+
+      .contact-box{
+        min-width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark"></span>
+      <span>RIZEL</span>
+    </a>
+
+    <nav>
+      <a href="#about">私たちについて</a>
+      <a href="#business">事業内容</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">RIZEL CORPORATION</div>
+
+      <h1>
+        人と環境をつなぎ、<br>
+        未来を創る。
+      </h1>
+
+      <p class="hero-copy">
+        私たちRIZELは、信頼と技術をもって、
+        環境・農業・資源循環に関わる事業を通じ、
+        持続可能な社会の実現に貢献します。
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#business" class="btn btn-primary">事業内容を見る</a>
+        <a href="#contact" class="btn btn-outline">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bg-label">SUSTAINABLE FUTURE</div>
+</section>
+
+
+<section class="message" id="about">
+  <div class="container">
+
+    <div class="message-grid">
+
+      <div class="image-placeholder">
+        ここに企業・環境イメージ画像<br>
+        assets/message.jpg
+      </div>
+
+      <div>
+        <div class="section-en">MESSAGE</div>
+
+        <h2>
+          信頼を礎に、<br>
+          豊かな未来を。
+        </h2>
+
+        <p>
+          私たちは、お客様・地域社会・環境とのつながりを大切にし、
+          誠実な事業活動を通じて、持続可能な未来の実現に貢献してまいります。
+          <br><br>
+          時代や社会の変化に柔軟に対応しながら、
+          常に新しい価値を創造し、信頼されるパートナーであり続けます。
+        </p>
+      </div>
+
+    </div>
+
+    <div class="values">
+
+      <div class="value">
+        <div class="value-number">01</div>
+        <h3>信頼と誠実</h3>
+        <p>
+          お客様との信頼関係を大切にし、
+          誠実な対応を徹底します。
+        </p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">02</div>
+        <h3>技術と品質</h3>
+        <p>
+          確かな技術と品質で、
+          最適なサービスを提供します。
+        </p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">03</div>
+        <h3>環境への配慮</h3>
+        <p>
+          環境に配慮した事業活動で、
+          持続可能な社会に貢献します。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="business" id="business">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-en">OUR BUSINESS</div>
+      <h2 class="section-title">事業内容</h2>
+    </div>
+
+    <div class="business-grid">
+
+      <article class="business-card">
+        <div class="business-image">
+          環境事業イメージ<br>
+          assets/business-environment.jpg
+        </div>
+
+        <div class="business-body">
+          <div class="business-no">1</div>
+          <h3>環境事業</h3>
+          <p>
+            廃棄物の適正処理やリサイクルの推進、
+            環境保全に関する各種サービスを通じて、
+            地域と地球の未来を守ります。
+          </p>
+        </div>
+      </article>
+
+
+      <article class="business-card">
+        <div class="business-image">
+          農業イメージ<br>
+          assets/business-agriculture.jpg
+        </div>
+
+        <div class="business-body">
+          <div class="business-no">2</div>
+          <h3>農業運営管理</h3>
+          <p>
+            農地の管理や運営支援、
+            作物の生産管理など、
+            持続可能な農業の実現に向けた
+            最適なソリューションを提供します。
+          </p>
+        </div>
+      </article>
+
+
+      <article class="business-card">
+        <div class="business-image">
+          産業廃棄物処理イメージ<br>
+          assets/business-waste.jpg
+        </div>
+
+        <div class="business-body">
+          <div class="business-no">3</div>
+          <h3>産業廃棄物処理場<br>運営管理</h3>
+          <p>
+            産業廃棄物の適正な処理・管理を行い、
+            安全で環境に配慮した処理体制で、
+            循環型社会の構築に貢献します。
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="vision">
+  <div class="container">
+    <div class="vision-inner">
+
+      <div class="section-en">OUR VISION</div>
+
+      <h2>
+        次の世代へつなぐ、<br>
+        持続可能な社会を目指して。
+      </h2>
+
+      <p>
+        限りある資源を大切にし、
+        環境・地域・産業が共に発展できる仕組みを考えること。
+        RIZELは事業を通じて、人と環境が共生する未来を支えていきます。
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="company">
+  <div class="container">
+
+    <div class="company-grid">
+
+      <div class="company-intro">
+        <div class="section-en">COMPANY</div>
+
+        <h2>
+          信頼される企業として、<br>
+          一歩ずつ未来へ。
+        </h2>
+      </div>
+
+      <dl class="company-table">
+
+        <div class="company-row">
+          <dt>会社名</dt>
+          <dd>株式会社 RIZEL</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>代表取締役</dt>
+          <dd>野瀬 隆彦</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>所在地</dt>
+          <dd>
+            〒101-0041<br>
+            東京都千代田区神田須田町2丁目15<br>
+            GYBビル502
+          </dd>
+        </div>
+
+        <div class="company-row">
+          <dt>TEL</dt>
+          <dd>
+            <a href="tel:0368597295">03-6859-7295</a>
+          </dd>
+        </div>
+
+        <div class="company-row">
+          <dt>FAX</dt>
+          <dd>03-6859-7221</dd>
+        </div>
+
+        <div class="company-row">
+          <dt>事業内容</dt>
+          <dd>
+            環境事業<br>
+            農業運営管理<br>
+            産業廃棄物処理場運営管理
+          </dd>
+        </div>
+
+      </dl>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="section-en">CONTACT</div>
+
+    <h2>お問い合わせ</h2>
+
+    <p class="contact-copy">
+      事業に関するご相談・お問い合わせは、
+      お電話またはメールにてお気軽にご連絡ください。
+    </p>
+
+    <div class="contact-links">
+
+      <a class="contact-box" href="tel:0368597295">
+        <span class="contact-small">TEL</span>
+        <span class="contact-main">03-6859-7295</span>
+      </a>
+
+      <a class="contact-box" href="mailto:rizel2022@gmail.com">
+        <span class="contact-small">MAIL</span>
+        <span class="contact-main">rizel2022@gmail.com</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>株式会社 RIZEL</span>
+    <span>© RIZEL CORPORATION. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
