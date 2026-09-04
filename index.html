@@ -1393,3 +1393,36 @@
   }
 }
 </style>
+
+<style id="rizel-wave-position-final">
+/* HERO wave 微調整：写真を見せてから自然に接続 */
+
+.hero-wave-wrap{
+  height:170px !important;
+  margin-top:-45px !important;
+  overflow:visible !important;
+}
+
+.hero-wave{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:fill !important;
+}
+
+/* タブレット */
+@media(max-width:850px){
+  .hero-wave-wrap{
+    height:125px !important;
+    margin-top:-30px !important;
+  }
+}
+
+/* スマホ */
+@media(max-width:520px){
+  .hero-wave-wrap{
+    height:85px !important;
+    margin-top:-20px !important;
+  }
+}
+</style>
