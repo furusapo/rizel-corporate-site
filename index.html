@@ -1075,6 +1075,62 @@
 }
 </style>
 
+
+<style id="rizel-wave-overlay-final">
+
+.hero{
+  position:relative !important;
+  overflow:hidden !important;
+  padding-bottom:0 !important;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:5;
+}
+
+.hero-wave-wrap{
+  position:absolute !important;
+  z-index:10 !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:-1px !important;
+  width:100% !important;
+  height:auto !important;
+  margin:0 !important;
+  overflow:visible !important;
+  pointer-events:none !important;
+}
+
+.hero-wave{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
+.message{
+  margin-top:0 !important;
+}
+
+@media(max-width:850px){
+  .hero-wave{
+    width:120% !important;
+    max-width:none !important;
+    margin-left:-10% !important;
+  }
+}
+
+@media(max-width:520px){
+  .hero-wave{
+    width:145% !important;
+    max-width:none !important;
+    margin-left:-22.5% !important;
+  }
+}
+
+</style>
+
 </head>
 
 <body>
@@ -1118,10 +1174,11 @@
       </div>
     </div>
   </div>
+
+  <div class="hero-wave-wrap" aria-hidden="true">
+    <img src="assets/wave.png" alt="" class="hero-wave">
+  </div>
 </section>
-<div class="hero-wave-wrap" aria-hidden="true">
-  <img src="assets/wave.png" alt="" class="hero-wave">
-</div>
 
 
 
